@@ -27,7 +27,7 @@ rails -v
 brew install sqlite
 
 # Check installation
-sqlite3 --version
+sqlite3 --version```
 
 
 # Deployment instructions
