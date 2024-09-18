@@ -1,24 +1,38 @@
 
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+just a project management application to try out Ruby on Rails
 
 Things you may want to cover:
 
-* Ruby version
+* ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux-gnu]
+* Rails 7.1.4
 
-* System dependencies
+* Install Rubis
+* brew install rbenv
+* rbenv install 3.0.0
+* rbenv global 3.0.0
 
-* Configuration
+* Check installation
+* ruby -v
 
-* Database creation
+* Install Rails
+* gem install rails
 
-* Database initialization
+* Check installation
+* rails -v
 
-* How to run the test suite
+* Rails use SQLite3 by default
+* Assurez-vous que SQLite3 est installé
 
-* Services (job queues, cache servers, search engines, etc.)
+* Install SQLite3
+* brew install sqlite
+
+* Check installation
+* sqlite3 --version
+
+* Commande for run
+* rails server
 
 * Deployment instructions
 
