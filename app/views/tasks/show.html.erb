@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md8 offset-md-2">
+        <h1><%= @task.title %></h1>
+
+        <div class="car mb-4">
+            <div class="card-body">
+            <h5 class="card-title">Description</h5>
+            <p class="card-text"><%= @task.description %></p>
+
+            <h5 class="card-title">Status</h5>
+            <p class="card-text"><%= @task.status %></p>
+
+            <h5 class="card-title">Due Date</h5>
+            <p class="card-text"><%= @task.due_date %></p>
+        </div>
+
+        <h2>Tasks</h2>
+
+        <%= link_to 'New Task', new_project_task_path(@project), class: 'btn btn-primary mb-3' %>
+
+        
+
+        <div class="mt-4">
+            <%= link_to 'Edit Task', edit_project_task_path(@project, @task), class: 'btn btn-secondary' %> |
+            <%= link_to 'Delete Task', project_task_path(@project, @task), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger' %> |
+            <%= link_to 'Back to tasks', project_tasks_path, class: 'btn btn-link' %>
+        </div>
+        </div>
+    </div>
+</div>

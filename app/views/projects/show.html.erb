@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md8 offset-md-2">
+        <h1><%= @project.title %></h1>
+
+        <div class="car mb-4">
+            <div class="card-body">
+            <h5 class="card-title">Description</h5>
+            <p class="card-text"><%= @project.description %></p>
+        </div>
+
+        <h2>Tasks</h2>
+
+        <%= link_to 'New Task', new_project_task_path(@project), class: 'btn btn-primary mb-3' %>
+
+        <% if @project.tasks.any?%>
+        <ul class="list-group-mb-4">
+            <% @project.tasks.each do |task| %>
+                <li class="list-group-item d-flex justify-content-between align-item-center">
+                    <span>
+                        <%= link_to task.title, project_task_path(@project, task) %>
+                    </span>
+                    <span>
+                        <%= link_to 'Edit', edit_project_task_path(@project, task), class: 'btn btn-secondary btn-sm' %>
+                        <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                    </span>
+                </li>
+            <% end %>
+        </ul>
+        <% else %>
+            <p class="alert alert-info">No tasks found for this project. Add a new task to get started/</p>
+        <% end %>
+
+        <div class="mt-4">
+            <%= link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-secondary' %> |
+            <%= link_to 'Delete Project', projects_path(@project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger' %> |
+            <%= link_to 'Back to Projects', projects_path, class: 'btn btn-link' %>
+        </div>
+        </div>
+    </div>
+</div>

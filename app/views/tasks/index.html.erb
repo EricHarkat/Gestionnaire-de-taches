@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h1>Tasks for <%= @project.title %></h1>
+
+    <%= link_to 'New Task', new_project_task_path(@project), class: 'btn btn-primary mb-3' %>
+
+    <% if @tasks.any?%>
+    <ul class="list-group">
+        <% @tasks.each do |task| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span>
+                    <%= link_to task.title, project_task_path(@project, task) %>
+                </span>
+                <span>
+                <%= link_to 'Edit', edit_project_task_path(@project, task), class: 'btn btn-secondary btn-sm' %>
+                <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                </span>
+            </li>
+        <% end %>
+    </ul>
+    <% else%>
+        <p class="alert alert-info">No ptasks found for this project. Add a new task to get started!</p>
+    <% end %>
+
+    <%= link_to 'Back to Projects', projects_path(@project), class: 'btn btn-link mt-3' %>
+</div>

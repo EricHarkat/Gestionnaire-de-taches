@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md8 offset-md-2">
+            <h1>Edit Project</h1>
+
+            <%= form_with(model: @project, local:true) do |form| %>
+            <% if @project.errors.any? %>
+                <div id="error_explanation" class="alert-danger">
+                    <h4><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h4>
+
+                    <ul>
+                        <% @project.erros.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <div class="from-group">
+                <%= form.label :title %>
+                <%= form.text_field :title, class: 'form-control' %>
+            </div>
+
+            <div class="from-group">
+                <%= form.label :description %>
+                <%= form.text_area :description, class: 'form-control' %>
+            </div>
+
+            <div class="fomr-group mt-3">
+                <%= form.submit "Upgrade Project", class: 'btn btn-primary' %>
+                <%= link_to 'back to Projects', projects_path(@project), class: 'btn btn-link' %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
