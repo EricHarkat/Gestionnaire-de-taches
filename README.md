@@ -27,7 +27,7 @@ rails -v
 brew install sqlite
 
 # Check installation
-sqlite3 --version```
+sqlite3 --version ```
 
 
 # Deployment instructions
@@ -41,6 +41,6 @@ rails db:create
 rails db:migrate
 
 # Commande for run
-rails server```
+rails server ```
 
 
